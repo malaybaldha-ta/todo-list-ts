@@ -13,11 +13,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createSelector } from '@reduxjs/toolkit';
 import { Ionicons } from '@expo/vector-icons';
 
-import TodoItem from '../components/TodoItem';
-import { RootStackParamList } from '../navigation/types';
-import { RootState, AppDispatch } from '../store';
-import { toggleExistingTodo, deleteExistingTodo, setFilter } from '../store/todosSlice';
-import { Todo } from '../types';
+import { TodoItem } from '@components';
+import { RootStackParamList } from '@navigation/types';
+import {
+  RootState,
+  AppDispatch,
+  toggleExistingTodo,
+  deleteExistingTodo,
+  setFilter,
+} from '@store';
+import Todo from '@types';
 
 // FILTERING LOGIC
 const selectFilteredTodos = createSelector(

@@ -1,5 +1,5 @@
 import * as SQLite from 'expo-sqlite';
-import { Todo } from '../types';
+import Todo from '../types';
 
 // --- Open the Database ---
 const db = SQLite.openDatabaseSync('todos.db');

@@ -10,3 +10,4 @@ export const store = configureStore({
 // These types remain the same and are still very useful
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export * from './todosSlice';

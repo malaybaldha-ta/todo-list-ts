@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { Todo } from '../types';
-import * as db from '../services/database';
+import Todo from '@types';
+import * as db from '@services/database';
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
   const todos = await db.getAllTodosAsync();

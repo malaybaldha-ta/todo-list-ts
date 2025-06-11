@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store';
-import { Todo } from '../types';
+import { RootState } from '@store';
+import Todo from '@types';
 
 const HistoryItem: React.FC<{item: Todo }> = ({item}) => (
     <View style={styles.historyItem}>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Text, Alert } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../navigation/types';
+import { RootStackParamList } from '@navigation/types';
 import { RouteProp } from '@react-navigation/native';
 
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../store';
-import { editExistingTodo } from '../store/todosSlice';
+import { AppDispatch } from '@store';
+import { editExistingTodo } from '@store/todosSlice';
 
 type EditTodoScreenNavigationProp = StackNavigationProp<RootStackParamList, 'EditTodo'>;
 type EditTodoScreenRouteProp = RouteProp<RootStackParamList, 'EditTodo'>;

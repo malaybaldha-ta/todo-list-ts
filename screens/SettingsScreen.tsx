@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, Alert } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { clearAll } from '../store/todosSlice';
-import { AppDispatch } from '../store';
+import { AppDispatch, clearAll } from '@store';
 
 const SettingsScreen: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();

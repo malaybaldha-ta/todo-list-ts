@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Todo } from '../types';
+import Todo from '@types';
 
 interface TodoItemProps{
   item: Todo;

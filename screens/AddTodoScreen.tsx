@@ -3,9 +3,9 @@ import { View, TextInput, Button, StyleSheet, Text, Alert } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useDispatch } from 'react-redux';
 
-import { addNewTodo } from '../store/todosSlice';
-import { AppDispatch } from '../store';
-import { RootStackParamList } from '../navigation/types';
+import { addNewTodo } from '@store';
+import { AppDispatch } from '@store';
+import { RootStackParamList } from '@navigation/types';
 
 type AddTodoScreenNavigationProp = StackNavigationProp<RootStackParamList, 'AddTodo'>;
 

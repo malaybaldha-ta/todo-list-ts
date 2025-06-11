@@ -4,17 +4,19 @@ import  React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider } from 'react-redux';
-import { store } from './store';
-import { setupDatabaseAsync } from './services/database';
-import { fetchTodos } from './store/todosSlice';
+import { store } from '@store/index';
+import { setupDatabaseAsync } from '@services/database';
+import { fetchTodos } from '@store/todosSlice';
 
-import TodoListScreen from './screens/TodoListScreen';
-import AddTodoScreen from './screens/AddTodoScreen';
-import EditTodoScreen from './screens/EditTodoScreen';
-import HistoryScreen from './screens/HistoryScreen';
-import SettingsScreen from './screens/SettingsScreen';
+import {
+  TodoListScreen,
+  AddTodoScreen,
+  EditTodoScreen,
+  HistoryScreen,
+  SettingsScreen,
+} from '@screens';
 
-import { RootStackParamList } from './navigation/types';
+import { RootStackParamList } from '@navigation/types';
 import { ActivityIndicator, View } from 'react-native';
 
 const Stack = createStackNavigator<RootStackParamList>();
