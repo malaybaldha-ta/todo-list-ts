@@ -3,7 +3,7 @@ import { View, TextInput, Button, StyleSheet, Text, Alert } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useDispatch } from 'react-redux';
 
-import { addTodo } from '../store/todosSlice';
+import { addNewTodo } from '../store/todosSlice';
 import { AppDispatch } from '../store';
 import { RootStackParamList } from '../navigation/types';
 
@@ -19,7 +19,7 @@ const AddTodoScreen: React.FC<Props> = ({ navigation }) => {
 
   const handleAdd = () => {
     if (title.trim().length > 0) {
-      dispatch(addTodo(title.trim()));
+      dispatch(addNewTodo(title.trim()));
       navigation.goBack();
     } else {
       Alert.alert('Input Required', 'Please enter a title for the todo.');

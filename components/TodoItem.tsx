@@ -17,24 +17,24 @@ const TodoItem: React.FC<TodoItemProps> = ({
   onNavigateToEdit
 }) => {
   return (
-    <View style={[styles.itemBase, item.completed && styles.itemCompleted]}>
-      <TouchableOpacity onPress= {() => onToggleComplete(item.id)} style={{ flex: 1 }}>
+    <TouchableOpacity onPress= {() => onToggleComplete(item.id)} style={[styles.itemBase, item.completed && styles.itemCompleted]}>
+      <View style={{ flex: 1 }}>
         <Text style={[styles.itemText, item.completed && styles.itemTextCompleted]}>
           {item.title}
         </Text>
-      </TouchableOpacity>
+      </View>
       <TouchableOpacity onPress={() => onNavigateToEdit(item)} style={styles.editButton}>
          <Text><MaterialIcons name="edit" size={24} color="blue" /></Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => onDelete(item.id)} style={styles.deleteButton}>
         <Text><MaterialIcons name="delete-outline" size={24} color="red" /></Text>
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-    itemBase: {
+  itemBase: {
     backgroundColor: '#ffffff',
     padding: 15,
     marginBottom: 10,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     padding: 5,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '500',
     marginRight: 10,
   },
@@ -66,8 +66,8 @@ const styles = StyleSheet.create({
     elevation: 3,
     backgroundColor: '#fff',
     borderRadius: 50,
-   },
-   deleteButton: {
+  },
+  deleteButton: {
     padding: 10,
     paddingHorizontal: 7,
     marginLeft: 10,

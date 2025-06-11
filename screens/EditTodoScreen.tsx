@@ -6,7 +6,7 @@ import { RouteProp } from '@react-navigation/native';
 
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../store';
-import { editTodo } from '../store/todosSlice';
+import { editExistingTodo } from '../store/todosSlice';
 
 type EditTodoScreenNavigationProp = StackNavigationProp<RootStackParamList, 'EditTodo'>;
 type EditTodoScreenRouteProp = RouteProp<RootStackParamList, 'EditTodo'>;
@@ -25,7 +25,7 @@ const EditTodoScreen: React.FC<Props> = ({ navigation, route }) => {
   const handleSave = () => {
     if (currentTitle.trim().length > 0) {
       dispatch(
-        editTodo({
+        editExistingTodo({
           id: todo.id,
           title: currentTitle.trim(),
         })

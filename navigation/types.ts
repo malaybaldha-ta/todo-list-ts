@@ -7,4 +7,5 @@ export type RootStackParamList = {
         todo: Todo;
     }
     History: undefined;
+    Settings: undefined;
 }

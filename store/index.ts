@@ -1,38 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import todosReducer from './todosSlice';
 
-const persistConfig = {
-    key: 'root',
-    storage: AsyncStorage,
-    // whitelist: ['todos'],
-}
-
-const persistedReducer = persistReducer(persistConfig, todosReducer);
-
 export const store = configureStore({
-    reducer: {
-        todos: persistedReducer,
-    },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        }),
+  reducer: {
+    todos: todosReducer,
+  },
 });
 
-export const persistor = persistStore(store);
-
+// These types remain the same and are still very useful
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
